@@ -1,8 +1,8 @@
 from __future__ import annotations
 from typing import Any, List, Optional, Tuple, Union
 
-from logic_variables import ensure_is_logic_variable, euc, PyValue, n_Vars, Term, unify, unify_pairs, Var
-from sequence_options.super_sequence import is_a_subsequence_of,  member, SuperSequence
+from ..logic_variables import ensure_is_logic_variable, euc, PyValue, n_Vars, Term, unify, unify_pairs, Var
+from ..sequence_options.super_sequence import is_a_subsequence_of,  member, SuperSequence
 
 
 class LinkedList(SuperSequence):
@@ -137,7 +137,7 @@ def append(Xs: Union[LinkedList, Var], Ys: Union[LinkedList, Var], Zs: Union[Lin
   how much of Zs is shifted before we let Ys be the rest.
 
   The function consists of two "clauses" (see prolog definition above), which are tried in sequence.
-  
+
   Clause 1
   This is the step in which we set Xs to [] and set Ys to Zs. No recursive call.
   At this point, earlier recursion calls will have shifted elements between Xs and Zs.
@@ -255,14 +255,14 @@ if __name__ == '__main__':
 
   """
   Expected output
-  
+
   emptyLinkedList: []
   LinkedList([1, 2, 3]): [1, 2, 3]
-  
+
   1. Y1: [abc, _13], Y2: [_17, _17]
   2. Y1: [abc, abc], Y2: [abc, abc]
   3. Y1: [abc, _13], Y2: [_17, _17]
-  
+
   End test
   """
 
@@ -290,7 +290,7 @@ if __name__ == '__main__':
 
   """
   Expected output:
-  
+
   > append([0, 1], [2, 3, 4], Zs); (Zs: _14)
   Zs = [0, 1, 2, 3, 4]
   Zs = _14
@@ -303,31 +303,31 @@ if __name__ == '__main__':
     print(f'Zs = {Zs}')
 
   """
-  
+
   > append(Xs, Ys, [0, 1, 2, 3, 4]); (Xs: _36, Ys: _37)
   Xs = []
   Ys = [0, 1, 2, 3, 4]
-  
+
   Xs = [0]
   Ys = [1, 2, 3, 4]
-  
+
   Xs = [0, 1]
   Ys = [2, 3, 4]
-  
+
   Xs = [0, 1, 2]
   Ys = [3, 4]
-  
+
   Xs = [0, 1, 2, 3]
   Ys = [4]
-  
+
   Xs = [0, 1, 2, 3, 4]
   Ys = []
-  
-  
+
+
   > append([1, 2, 3], Ys, Zs); (Ys: _122, Zs: _123)
   Ys = _139;
   Zs = ([], 1, ([], 2, ([], 3, _139)))
-  
+
   """
 
   print(f'\n?- LinkedList([Var()]).is_instantiated(): {LinkedList([Var( )]).is_instantiated( )}')
@@ -368,7 +368,7 @@ if __name__ == '__main__':
   Unclosed_List2 = LinkedList(Var( ), Var( ))
   print(f'7. Unclosed_List2: {Unclosed_List2}, len(Unclosed_List2): {len(Unclosed_List2)}')
   for _ in unify(LinkedList([*range(5)]), Unclosed_List2):
-    print(f'8. unify(LinkedList([*range(5)]), Unclosed_List2) => ' 
+    print(f'8. unify(LinkedList([*range(5)]), Unclosed_List2) => '
           f'Unclosed_List2: {Unclosed_List2}; len(Unclosed_List2): {len(Unclosed_List2)}')
 
   Unclosed_List3 = LinkedList(Var( ), Var( ))
@@ -390,17 +390,17 @@ if __name__ == '__main__':
 
   """
   Expected output
-  
+
   LinkedList([Var()]).is_instantiated(): False
   1. A: [1, 2, 3], B: ('[]', '_46', '_47')
   2. A: [1, 2, 3], B: [1, 2, 3]
   3. C: [0, 2, 3]
   4. D3: 3, D2: 2, D: [3, 2, 3]
   5. E: [1, 2, 3], E_EoT.head(): 1, E_EoT.tail(): [2, 3]
-  
+
   6. Unclosed_List1: ('[]', 'head', '_64')
   7. Unclosed_List2: ('[]', '_66', '_67')
   8. Unclosed_List2: [1, 2, 3]
-  
+
   End fifth test
   """
