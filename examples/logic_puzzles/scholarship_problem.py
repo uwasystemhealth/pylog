@@ -1,8 +1,8 @@
-from logic_variables import PyValue, StructureItem, Var
+from pylog.logic_variables import PyValue, StructureItem, Var
 
-from sequence_options.super_sequence import is_contiguous_in, is_a_subsequence_of, member, SuperSequence
+from pylog.sequence_options.super_sequence import is_contiguous_in, is_a_subsequence_of, member, SuperSequence
 
-from examples.logic_puzzles.puzzles import Problem
+from pylog.puzzles import Problem
 
 """
 A puzzle from GeekOverdose: https://geekoverdose.wordpress.com/2015/10/31/solving-logic-puzzles-in-prolog-puzzle-1-of-3/
@@ -11,10 +11,10 @@ Prolog solution provided at that site.
 
                         ----------------------------------------------------------------
 
-There are 4 students: Amy, Carrie, Erma, and Tracy. 
-Each has one scholarship and one major subject.  
-The available scholarships are: $25,000, $30,000, $35,000 and $40,000. 
-The available majors are: Astronomy, Comp Sci, English, and Philosophy. 
+There are 4 students: Amy, Carrie, Erma, and Tracy.
+Each has one scholarship and one major subject.
+The available scholarships are: $25,000, $30,000, $35,000 and $40,000.
+The available majors are: Astronomy, Comp Sci, English, and Philosophy.
 
 Using the following clues, determine which student has which scholarship and studies which subject.
 
@@ -26,7 +26,7 @@ Using the following clues, determine which student has which scholarship and stu
 
 The (unique) solution.
 
-Students: 
+Students:
 	Carrie(English, 25)
 	Tracy(Comp Sci, 30)
 	Erma(Astronomy, 35)
@@ -121,7 +121,7 @@ class ScholarshipProblem(Problem):
 if __name__ == '__main__':
 
   """ Select either LinkedList or a PySequence (PyList or PyTuple) as the ListType. """
-  from sequence_options.linked_list import LinkedList
+  from pylog.sequence_options.linked_list import LinkedList
   ListType = LinkedList
 
   # from sequence_options.sequences import PyList  # or PyTuple

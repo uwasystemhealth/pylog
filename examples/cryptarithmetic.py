@@ -1,6 +1,6 @@
 from typing import Iterable, List, Optional, Tuple
 
-from logic_variables import PyValue, unify, unify_pairs
+from pylog.logic_variables import PyValue, unify, unify_pairs
 
 
 def complete_column(carry_out: int, Carry_Out_Dig: PyValue,
@@ -89,7 +89,7 @@ def solve(Carries: List[PyValue],
     else:
       for digits_out in fill_column([Term1[index], Term2[index]], index, digits_in):
           yield from solve_aux(index-1, digits_out)
-    
+
   yield from solve_aux(len(Carries)-1, list(range(10)))
 
 

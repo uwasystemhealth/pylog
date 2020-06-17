@@ -18,7 +18,7 @@ class Placement(Dict):
       # Initially every row is uninstantiated, and all values are available.
       self[row] = (None, frozenset(range(board_size)))
     super().__init__()
-    
+
   def uninstantiated_rows(self):
     """ Return the uninstantiated rows. """
     return [row for row in self if self.value_for(row) is None]
@@ -30,9 +30,9 @@ class Placement(Dict):
   def value_for(self, row):
     """ Return the value assigned to this row. """
     return self[row][0]
-  
-  
-##### Computations ##### 
+
+
+##### Computations #####
 
 
 def new_placement_val(next_row, col, r, c, avail):
@@ -62,7 +62,7 @@ total_time_start = 0
 def place_n_queens(board_size: int):
   """
   The main function.
-  
+
   Generate and display solutions to the n-queens problem.
   """
   global limit, start, total_time_start
@@ -120,8 +120,8 @@ def place_remaining_queens(placement: Placement):
     else:
       # Find columns for the remaining queens.
       yield from place_remaining_queens(next_placement)
-      
-      
+
+
 #############  Display functions  #############
 
 

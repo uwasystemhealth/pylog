@@ -1,9 +1,9 @@
 from typing import Generator, List, Optional
 
-from control_structures import fails
-from logic_variables import unify, Var
-from sequence_options.sequences import PyList
-from sequence_options.super_sequence import member
+from pylog.control_structures import fails
+from pylog.logic_variables import unify, Var
+from pylog.sequence_options.sequences import PyList
+from pylog.sequence_options.super_sequence import member
 
 
 
@@ -183,7 +183,7 @@ Sets/[]; Partial_Transversal/[3, 4, 1]
 
 """
 transversal_prolog(Sets, Partial_Transversal, _Complete_Transversal) :-
-    writeln('Sets'/Sets;'  Partial_Transversal'/Partial_Transversal), 
+    writeln('Sets'/Sets;'  Partial_Transversal'/Partial_Transversal),
     fail.
 
 transversal_prolog([], Complete_Transversal, Complete_Transversal) :-
@@ -197,11 +197,11 @@ transversal_prolog([S|Ss], Partial_Transversal, Complete_Transversal_X) :-
     transversal_prolog(Ss, Partial_Transversal_X, Complete_Transversal_X).
 
 
-    
-    
-    
-    
-    
+
+
+
+
+
 ?- transversal_prolog([[1, 2, 3], [2], [1]], [], Complete_Transversal).
 
 Sets/[[1, 2, 3], [2, 4], [1]]; Partial_Transversal/[]

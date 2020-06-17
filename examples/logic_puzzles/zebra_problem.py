@@ -1,15 +1,15 @@
-from logic_variables import n_Vars, StructureItem, unify
+from pylog.logic_variables import n_Vars, StructureItem, unify
 
-from examples.logic_puzzles.puzzles import Problem
-from sequence_options.super_sequence import is_contiguous_in, member, members, next_to, SuperSequence
+from pylog.puzzles import Problem
+from pylog.sequence_options.super_sequence import is_contiguous_in, member, members, next_to, SuperSequence
 
 """
 One version of the famous Zebra problem. (All versions are structurally similar, but the names are often different.)
 
                         ----------------------------------------------------------------
 
-There are 5 houses in a row, each with a unique color. 
-Each house is occupied by a family of a unique nationality. 
+There are 5 houses in a row, each with a unique color.
+Each house is occupied by a family of a unique nationality.
 Each family has a pet, a favorite smoke, and a favorite drink.
 
 1. The English live in the red house.
@@ -35,10 +35,10 @@ Houses:
   3. English(Old Gold, snails, milk, red)
   4. Spanish(Lucky, dog, juice, white)
   5. Japanese(Parliament, zebra, coffee, green)
-  
+
   The Japanese own a zebra, and the Norwegians drink water.
 
- 
+
     =================================================================================================================
       This and the scholarship problem are both written so that they can use either LinkedLists or one of the
       PySequence options: PyList or PyTuple. Make a choice at the bottom of the file.
@@ -161,7 +161,7 @@ if __name__ == '__main__':
   # from sequence_options.linked_list import LinkedList
   # ListType = LinkedList
   #
-  from sequence_options.sequences import PyList  # or PyTuple
+  from pylog.sequence_options.sequences import PyList  # or PyTuple
   ListType = PyList  # or PyTuple
 
   """ Run problem """

@@ -1,7 +1,7 @@
 # from inspect import getmembers
 from typing import Generator
 
-from logic_variables import euc, PyValue, unify, unify_pairs, Var
+from .logic_variables import euc, PyValue, unify, unify_pairs, Var
 
 
 class Bool_Yield_Wrapper:
@@ -107,7 +107,7 @@ def bool_yield_wrapper(gen):
 
 
 def bool_to_sf(b: bool) -> Generator[None, None, None]:
-  """ 
+  """
   Turns a boolean condition into a Generator, which succeeds/fails
   if the boolean condition is True/False
   """
@@ -153,7 +153,7 @@ def forany(gens):
     # Succeed if any of them succeed.
     # Can probably not do the lambda trick here, but keeping it makes it
     # parallel to forall. Succeed if any of them succeed.
-    # Try them all even if earlier ones succeed. 
+    # Try them all even if earlier ones succeed.
     # for _ in gen( ):
     #   yield
     yield from gen( )
