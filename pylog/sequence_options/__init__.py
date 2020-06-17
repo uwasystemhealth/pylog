@@ -1,1 +1,1 @@
-from sequence_options import *
+from . import (linked_list,sequences,super_sequence)
